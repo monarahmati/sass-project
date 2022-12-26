@@ -1,0 +1,273 @@
+@import "./mixins";
+@import "./variables";
+
+* {
+    @include overal 
+}
+
+body {
+    background-color: $bgColor;
+}
+
+.header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: $primaryColor;
+    padding: 0.8rem 3rem;
+
+
+    h1{
+        @include textStyle (1.5rem , bold ,$secondaryColor)
+    }
+
+    
+    
+    .humberger_menu{
+        display: none;
+        flex-direction: column;
+    
+        span{
+            background-color: $secondaryColor;
+            display: inline-block;
+            height: 3px;
+            margin: 2px;
+            width: 20px;
+        }
+    }
+}
+
+ 
+.navbar {
+    display: flex;
+    align-items: center;
+
+    img{
+        width: 60px;
+        border-radius: 80%;
+    }
+
+    nav {
+        margin-right: 40px;
+    }
+    
+    ul {
+     
+        display: flex;
+        text-decoration: none;
+        list-style-type: none;
+    }
+    
+    
+    a{
+        margin: 10px;
+        text-decoration: none;
+        transition: 0.3s all ease-in;
+        @include textStyle(1rem , bold , $secondaryColor);
+
+        &:hover{
+            color:$textColor;
+        }
+    }
+}
+
+
+
+
+
+
+.main{
+
+    display: flex;
+    margin: 2rem 3rem;
+
+    aside{
+        width: 25%;
+        flex-direction: column;
+        margin-right: 25px;
+        @include bodyStyle;
+        @include boxStyle;
+
+        div{
+            background-color: $primaryColor;
+            width: 100%;
+            margin: 20px 20px;
+            height: 130px;
+            line-height: 110px;
+            text-align: center;
+            @include boxStyle;
+            @include textStyle(1.7rem , bold , $secondaryColor)
+        }
+    }
+
+
+    main{
+    
+        width: 75%;
+        @include bodyStyle;
+        @include boxStyle;
+        align-items: center;
+        flex-direction: column;
+        img{
+            width: 800px;
+            @include boxStyle;
+        }
+        h1{
+            margin: 40px 20px;
+            @include textStyle(4.5rem , bold , $primaryColor)
+        }
+        p{
+            @include textStyle( 1.5rem , bold , $textColor)
+        }
+        
+
+    }
+ }       
+
+.cards{
+    width: calc(100% - 6rem);
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.card {
+    @include boxStyle;
+    img{
+        width:100%;
+    }
+    .card-content{
+        line-height: 1.5rem;
+        background-color: $secondaryColor;
+        padding: 15px;
+
+        p{
+            margin: 10px 0;
+            @include textStyle(1.3rem , 100 , $textColor)
+        }
+
+        span{
+            display: inline-block;
+            margin: 20px 0;
+            @include textStyle ( 1.2rem , 200 , $primaryColor )
+        }
+    }
+}
+
+footer{
+    background-color:$primaryColor;
+    display: flex;
+    padding: 2rem 3rem ;
+    margin-top: 20px;
+      
+    .summery{
+        width: 50%;
+
+        p{
+            text-align: justify;
+            @include textStyle(1.5rem , 100 , $secondaryColor
+            )
+        }
+    }
+
+    .links{
+        padding: 0 5rem;
+
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            @include textStyle(1.2rem , bold , $secondaryColor );
+            display:inline-block;
+            margin-bottom: 15px;
+            transition: 0.3s all ease-in;
+            &:hover{
+                color: $textColor;
+            }
+        }
+    }
+   
+}
+
+// --------------- RESPONSIVE -----------------------------------------
+
+@include media(M) {
+    .header{
+        .humberger_menu{
+            display: flex;
+        }
+    }
+    .navbar{
+        display: none;
+    }
+
+    .main{
+        margin: 1rem;
+        flex-direction: column-reverse;
+        main{
+            width: calc(100% - 2rem);
+            height: 500px;
+            margin-bottom: 20px;
+            h1{
+                font-size: 3rem;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+            img {
+                width: 450px;
+                margin: 1rem;
+            }
+        }
+        aside{
+            flex-direction: column;
+            width: calc(100% - 2rem);
+            height: 550px;
+        }
+
+     
+    }
+
+    .cards{
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+
+    footer{
+            
+        flex-direction: column;
+
+        .summery{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .links{
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+}
+
+
+
+@include media(L) {
+    .main{
+        main{
+            img{
+                width: 500px;
+            }
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+    }
+    .cards{
+        grid-template-columns: 1fr 1fr;
+        grid: 50px;
+    }
+}

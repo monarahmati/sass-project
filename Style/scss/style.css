@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #edf2f7;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #654fef;
+  padding: 0.8rem 3rem;
+}
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+.header .humberger_menu {
+  display: none;
+  flex-direction: column;
+}
+.header .humberger_menu span {
+  background-color: #fff;
+  display: inline-block;
+  height: 3px;
+  margin: 2px;
+  width: 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.navbar img {
+  width: 60px;
+  border-radius: 80%;
+}
+.navbar nav {
+  margin-right: 40px;
+}
+.navbar ul {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+}
+.navbar a {
+  margin: 10px;
+  text-decoration: none;
+  transition: 0.3s all ease-in;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+.navbar a:hover {
+  color: rgb(27, 27, 27);
+}
+
+.main {
+  display: flex;
+  margin: 2rem 3rem;
+}
+.main aside {
+  width: 25%;
+  flex-direction: column;
+  margin-right: 25px;
+  background-color: #fff;
+  display: flex;
+  padding: 1rem;
+  height: 850px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 5px 4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.main aside div {
+  background-color: #654fef;
+  width: 100%;
+  margin: 20px 20px;
+  height: 130px;
+  line-height: 110px;
+  text-align: center;
+  box-shadow: 1px 5px 4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+}
+.main main {
+  width: 75%;
+  background-color: #fff;
+  display: flex;
+  padding: 1rem;
+  height: 850px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 5px 4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+}
+.main main img {
+  width: 800px;
+  box-shadow: 1px 5px 4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.main main h1 {
+  margin: 40px 20px;
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #654fef;
+}
+.main main p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(27, 27, 27);
+}
+
+.cards {
+  width: calc(100% - 6rem);
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.card {
+  box-shadow: 1px 5px 4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+}
+.card .card-content {
+  line-height: 1.5rem;
+  background-color: #fff;
+  padding: 15px;
+}
+.card .card-content p {
+  margin: 10px 0;
+  font-size: 1.3rem;
+  font-weight: 100;
+  color: rgb(27, 27, 27);
+}
+.card .card-content span {
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: #654fef;
+}
+
+footer {
+  background-color: #654fef;
+  display: flex;
+  padding: 2rem 3rem;
+  margin-top: 20px;
+}
+footer .summery {
+  width: 50%;
+}
+footer .summery p {
+  text-align: justify;
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #fff;
+}
+footer .links {
+  padding: 0 5rem;
+}
+footer .links ul {
+  list-style: none;
+}
+footer .links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 15px;
+  transition: 0.3s all ease-in;
+}
+footer .links a:hover {
+  color: rgb(27, 27, 27);
+}
+
+@media (max-width: 768px) {
+  .header .humberger_menu {
+    display: flex;
+  }
+  .navbar {
+    display: none;
+  }
+  .main {
+    margin: 1rem;
+    flex-direction: column-reverse;
+  }
+  .main main {
+    width: calc(100% - 2rem);
+    height: 500px;
+    margin-bottom: 20px;
+  }
+  .main main h1 {
+    font-size: 3rem;
+  }
+  .main main p {
+    font-size: 1.5rem;
+  }
+  .main main img {
+    width: 450px;
+    margin: 1rem;
+  }
+  .main aside {
+    flex-direction: column;
+    width: calc(100% - 2rem);
+    height: 550px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+  footer {
+    flex-direction: column;
+  }
+  footer .summery {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  footer .links {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .main main img {
+    width: 500px;
+  }
+  .main main h1 {
+    font-size: 3.5rem;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    grid: 50px;
+  }
+}/*# sourceMappingURL=style.css.map */
